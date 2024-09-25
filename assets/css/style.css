@@ -107,3 +107,46 @@ h6 {
   color: #ffc857;
   cursor: pointer;
 }
+
+.top-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: clamp(50px, 10vw, 100px);
+  z-index: 3;
+  background-color: #FAFAFA;
+}
+
+.top-bar h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.top-bar i {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.open-btn {
+  color: #353935;
+  position: absolute;
+  left: 12px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.intro {
+  padding-top: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+  margin-top: clamp(0, 4vw, 20px);
+  margin-bottom: clamp(5px, 4vw, 10px);
+}
+
+.intro h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
