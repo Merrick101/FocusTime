@@ -310,6 +310,21 @@ document.addEventListener('DOMContentLoaded', function () {
     localStorage.setItem('notificationsEnabled', notificationsEnabled ? 'enabled' : 'disabled');
   });
 
-  
-
+   // Initialize Toggles on Page Load (Restore from LocalStorage)
+   const darkModeEnabled = localStorage.getItem('darkMode') === 'enabled';
+   const notificationsEnabled = localStorage.getItem('notificationsEnabled') === 'enabled';
+ 
+   darkModeToggle.classList.toggle('active', darkModeEnabled);
+   document.body.classList.toggle('dark-mode', darkModeEnabled);
+   notificationsToggle.classList.toggle('active', notificationsEnabled);
+ 
+   // Add event listener for feedback form submission
+   const feedbackForm = document.getElementById('feedback-form');
+   if (feedbackForm) {
+     feedbackForm.addEventListener('submit', function (event) {
+       event.preventDefault();
+       alert('Thank you for your feedback!');
+       closeModal('contact-modal');
+     });
+   }
 });
