@@ -239,4 +239,22 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById(`${timeSettings.currentMode}-mode`).classList.add('active');
     }
 
+    // Initial setup
+  updateTimerDisplay(timeSettings.timeLeft);
+  updateProgress(timeSettings.timeLeft);
+
+  // Event listeners for buttons
+  startPauseButton.addEventListener('click', toggleTimer);
+  resetButton.addEventListener('click', resetTimer);
+  
+  // Manual mode switching when mode buttons are clicked
+  workModeButton.addEventListener('click', () => manualSwitchMode('work'));
+  shortBreakModeButton.addEventListener('click', () => manualSwitchMode('shortBreak'));
+  longBreakModeButton.addEventListener('click', () => manualSwitchMode('longBreak'));
+
+  // Request Notification Permission on page load
+  if (Notification.permission === 'default') {
+    Notification.requestPermission();
+  }
+
 });
