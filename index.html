@@ -58,8 +58,35 @@
             <h2>Boost your productivity with the Pomodoro Technique.</h2>
         </div>
 
-        <!-- JavaScript -->
-        <script src="assets/js/script.js"></script>
+        <!-- Timer Area -->
+        <div class="box">
+            <!-- Timer Mode Switch Option (top row) -->
+            <div class="top-controls">
+                <button id="work-mode" class="mode-btn">Work</button>
+                <button id="shortBreak-mode" class="mode-btn">Short Break</button>
+                <button id="longBreak-mode" class="mode-btn">Long Break</button>
+            </div>
+
+            <!-- Progress Bar and Timer Display -->
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="progress-bar-fill"></div>
+            </div>
+            <div class="content">
+                <span id="time" class="time">25:00</span>
+            </div>
+
+            <!-- Control Buttons (bottom row) -->
+            <div class="bottom-controls">
+                <button id="start-pause"><i class="fa-solid fa-play"></i> Start</button>
+                <button id="reset"><i class="fa-solid fa-undo"></i> Reset</button>
+                <button id="customize-timer" data-modal="customization-modal"><i class="fa-solid fa-gear"></i>
+                    Settings</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>

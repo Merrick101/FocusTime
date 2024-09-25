@@ -71,3 +71,5 @@ document.addEventListener('DOMContentLoaded', function () {
             closeModal(modal.id); // Pass the modal's id to the closeModal function
         });
     });
+
+});
