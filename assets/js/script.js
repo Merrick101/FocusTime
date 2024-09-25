@@ -220,4 +220,23 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById(`${timeSettings.currentMode}-mode`).classList.add('active');
     }
 
+    // **Automatic Mode Switching** when timer expires
+    function switchMode() {
+        if (timeSettings.currentMode === 'work') {
+            // If in work mode, switch to short break
+            timeSettings.currentMode = 'shortBreak';
+            timeSettings.timeLeft = timeSettings.shortBreakTime;
+            notifyUser("Time for a short break!");
+        } else if (timeSettings.currentMode === 'shortBreak' || timeSettings.currentMode === 'longBreak') {
+            // After short or long break ends, switch back to work
+            timeSettings.currentMode = 'work';
+            timeSettings.timeLeft = timeSettings.workTime;
+            notifyUser("Back to work!");
+        }
+
+        resetTimer();
+        document.querySelectorAll('.mode-btn').forEach(button => button.classList.remove('active'));
+        document.getElementById(`${timeSettings.currentMode}-mode`).classList.add('active');
+    }
+
 });
