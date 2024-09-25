@@ -118,7 +118,7 @@ h6 {
   width: 100%;
   height: clamp(50px, 10vw, 100px);
   z-index: 3;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 
 .top-bar h1 {
@@ -167,7 +167,7 @@ h6 {
 
 /* General button styles within the timer area */
 .box button {
-  background-color: #FFC857;
+  background-color: #ffc857;
   color: #353935;
   padding: 10px;
   border: none;
@@ -182,12 +182,13 @@ h6 {
 
 /* Button hover effect */
 .box button:hover {
-  background-color: #FFD700;
+  background-color: #ffd700;
   transform: scale(1.07);
 }
 
 /* Top and bottom controls layout */
-.top-controls, .bottom-controls {
+.top-controls,
+.bottom-controls {
   display: flex;
   justify-content: space-between;
   gap: 15px;
@@ -214,17 +215,17 @@ h6 {
 
 /* Active state for each mode */
 #work-mode.active {
-  background-color: #4682B4; /* Blue for Work mode */
+  background-color: #4682b4; /* Blue for Work mode */
   color: white; /* Text color contrast */
 }
 
 #shortBreak-mode.active {
-  background-color: #FF6347; /* Red for Short Break mode */
+  background-color: #ff6347; /* Red for Short Break mode */
   color: white;
 }
 
 #longBreak-mode.active {
-  background-color: #32CD32; /* Green for Long Break mode */
+  background-color: #32cd32; /* Green for Long Break mode */
   color: white;
 }
 
@@ -240,30 +241,32 @@ h6 {
 .progress-bar-fill {
   width: 0;
   height: 100%;
-  background-color: #4682B4;
+  background-color: #4682b4;
   border-radius: 5px;
   transition: width 0.3s linear;
 }
 
 /* Digital Clock inside timer area */
 @font-face {
-  font-family: 'DS-DIGI';
-  src: url('/assets/fonts/DS-DIGI.TTF') format('truetype');
+  font-family: "DS-DIGI";
+  src: url("/assets/fonts/DS-DIGI.TTF") format("truetype");
 }
 
 #time {
   font-size: clamp(2.5rem, 10vw, 5rem);
-  font-family: 'DS-DIGI', sans-serif;
-  color: #4682B4;
+  font-family: "DS-DIGI", sans-serif;
+  color: #4682b4;
   text-align: center;
 }
 
 #time.fifteen-minutes-left {
-color: #32CD32;
+  color: #32cd32;
 }
 
 /* Five minutes left */
-#time.nearing-end { color: #FF6347; }
+#time.nearing-end {
+  color: #ff6347;
+}
 
 /* Toggle Switch Styling */
 .toggle-switch {
@@ -276,10 +279,10 @@ color: #32CD32;
 }
 
 .toggle-switch::before {
-  content: '';
+  content: "";
   width: 23px;
   height: 23px;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   border-radius: 50%;
   position: absolute;
   top: -7px;
@@ -288,7 +291,7 @@ color: #32CD32;
 }
 
 .toggle-switch.active {
-  background-color: #4682B4;
+  background-color: #4682b4;
 }
 
 .toggle-switch.active::before {
@@ -314,8 +317,8 @@ color: #32CD32;
 }
 
 .modal-content {
-  background-color: #4682B4;
-  color: #FAFAFA;
+  background-color: #4682b4;
+  color: #fafafa;
   padding: 30px;
   font-size: 1rem;
   border: 1px solid #888;
@@ -340,7 +343,7 @@ color: #32CD32;
 }
 
 .modal-content button {
-  background-color: #FFC857;
+  background-color: #ffc857;
   color: #353935;
   padding: 10px;
   border: none;
@@ -354,12 +357,12 @@ color: #32CD32;
 }
 
 .modal-content button:hover {
-  background-color: #FFD700;
+  background-color: #ffd700;
   transform: scale(1.07);
 }
 
 .modal-content a {
-  color: #FFC857;
+  color: #ffc857;
   text-decoration: none;
 }
 
@@ -370,10 +373,59 @@ input {
 }
 
 .close-btn {
-  color: #FAFAFA;
+  color: #fafafa;
   font-size: 28px;
 }
 
 .close-btn:hover {
-  color: #FFC857;
+  color: #ffc857;
 }
+
+/* Specific modal styles */
+.hidden {
+  display: none;
+} /* Sign up form hidden by default */
+
+/* General form styling */
+.auth-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+.auth-form label {
+  align-self: flex-start; /* Align labels to the left */
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: #fafafa;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.auth-form button {
+  background-color: #ffc857;
+  color: #353935;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  max-width: 150px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+.auth-form button:hover {
+  background-color: #ffd700;
+  transform: scale(1.05);
+}
+
