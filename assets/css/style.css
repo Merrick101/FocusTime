@@ -470,4 +470,31 @@ input {
   margin-top: 15px;
 }
 
+#contact-modal .modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
 
+#contact-modal label {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #FAFAFA;
+}
+
+#contact-modal input,
+#contact-modal textarea {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+#contact-modal textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+#contact-modal button {
+  margin-top: 15px;
+}

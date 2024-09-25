@@ -158,6 +158,54 @@ document.addEventListener('DOMContentLoaded', function () {
                 : '#32CD32';
     }
 
+    // Start or Pause the timer
+    function toggleTimer() {
+        if (isRunning) {
+            pauseTimer();
+        } else {
+            startTimer();
+        }
+    }
+
+    function updateTimerUI() {
+        updateTimerDisplay(timeSettings.timeLeft);
+        updateProgress(timeSettings.timeLeft);
+    }
+
+    function startTimer() {
+        isRunning = true;
+        startPauseButton.innerHTML = '<i class="fa-solid fa-pause"></i> Pause';
+        interval = setInterval(() => {
+            if (timeSettings.timeLeft <= 0) {
+                clearInterval(interval);
+                switchMode(); // Automatically switch modes when time ends
+            } else {
+                timeSettings.timeLeft--;
+                updateTimerUI();
+            }
+        }, 1000);
+    }
+
+    function pauseTimer() {
+        clearInterval(interval);
+        isRunning = false;
+        startPauseButton.innerHTML = '<i class="fa-solid fa-play"></i> Start';
+    }
+
+    function resetTimer() {
+        clearInterval(interval);
+        isRunning = false;
+        timeSettings.timeLeft = timeSettings.currentMode === 'work'
+            ? timeSettings.workTime
+            : timeSettings.currentMode === 'shortBreak'
+                ? timeSettings.shortBreakTime
+                : timeSettings.longBreakTime;
+
+        updateTimerDisplay(timeSettings.timeLeft);
+        updateProgress(timeSettings.timeLeft);
+        startPauseButton.innerHTML = '<i class="fa-solid fa-play"></i> Start';
+    }
+
 
 
 });
