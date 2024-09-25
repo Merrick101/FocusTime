@@ -85,17 +85,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Add event listener to the Sign Up link in the Sign In form
-  document.querySelector('#sign-in-form a').addEventListener('click', function (e) {
-    e.preventDefault();
-    switchToSignUp();
-  });
+    document.querySelector('#sign-in-form a').addEventListener('click', function (e) {
+        e.preventDefault();
+        switchToSignUp();
+    });
 
-  // Add event listener to the Sign In link in the Sign Up form
-  document.querySelector('#sign-up-form a').addEventListener('click', function (e) {
-    e.preventDefault();
-    switchToSignIn();
-  });
+    // Add event listener to the Sign In link in the Sign Up form
+    document.querySelector('#sign-up-form a').addEventListener('click', function (e) {
+        e.preventDefault();
+        switchToSignIn();
+    });
 
-  
+    // Timer-related variables
+    const timeSettings = {
+        workTime: 1500, // 25 minutes
+        shortBreakTime: 300, // 5 minutes
+        longBreakTime: 900, // 15 minutes
+        timeLeft: 1500, // This will track the remaining time
+        currentMode: 'work' // Initial mode is 'work'
+    };
+
+    // Timer control variables
+    let isRunning = false;  // Tracks whether the timer is running
+    let interval;           // Stores the reference to the interval
 
 });
