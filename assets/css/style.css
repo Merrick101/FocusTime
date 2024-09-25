@@ -452,7 +452,7 @@ input {
 #customization-modal label {
   margin-bottom: 8px;
   font-size: 1rem;
-  color: #fafafa; /* Match the modal text color */
+  color: #fafafa;
 }
 
 #customization-modal input {
@@ -467,5 +467,7 @@ input {
 }
 
 #customization-modal button {
-  margin-top: 15px; /* Add space above the save button */
+  margin-top: 15px;
 }
+
+
