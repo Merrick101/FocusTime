@@ -72,4 +72,30 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Function to switch to Sign Up form
+    function switchToSignUp() {
+        document.getElementById('sign-in-form').classList.add('hidden');
+        document.getElementById('sign-up-form').classList.remove('hidden');
+    }
+
+    // Function to switch to Sign In form
+    function switchToSignIn() {
+        document.getElementById('sign-up-form').classList.add('hidden');
+        document.getElementById('sign-in-form').classList.remove('hidden');
+    }
+
+    // Add event listener to the Sign Up link in the Sign In form
+  document.querySelector('#sign-in-form a').addEventListener('click', function (e) {
+    e.preventDefault();
+    switchToSignUp();
+  });
+
+  // Add event listener to the Sign In link in the Sign Up form
+  document.querySelector('#sign-up-form a').addEventListener('click', function (e) {
+    e.preventDefault();
+    switchToSignIn();
+  });
+
+  
+
 });

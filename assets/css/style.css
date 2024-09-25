@@ -363,4 +363,17 @@ color: #32CD32;
   text-decoration: none;
 }
 
+input {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
 
+.close-btn {
+  color: #FAFAFA;
+  font-size: 28px;
+}
+
+.close-btn:hover {
+  color: #FFC857;
+}
