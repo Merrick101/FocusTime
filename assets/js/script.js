@@ -240,31 +240,61 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Initial setup
-  updateTimerDisplay(timeSettings.timeLeft);
-  updateProgress(timeSettings.timeLeft);
+    updateTimerDisplay(timeSettings.timeLeft);
+    updateProgress(timeSettings.timeLeft);
 
-  // Event listeners for buttons
-  startPauseButton.addEventListener('click', toggleTimer);
-  resetButton.addEventListener('click', resetTimer);
-  
-  // Manual mode switching when mode buttons are clicked
-  workModeButton.addEventListener('click', () => manualSwitchMode('work'));
-  shortBreakModeButton.addEventListener('click', () => manualSwitchMode('shortBreak'));
-  longBreakModeButton.addEventListener('click', () => manualSwitchMode('longBreak'));
+    // Event listeners for buttons
+    startPauseButton.addEventListener('click', toggleTimer);
+    resetButton.addEventListener('click', resetTimer);
 
-  // Request Notification Permission on page load
-  if (Notification.permission === 'default') {
-    Notification.requestPermission();
-  }
+    // Manual mode switching when mode buttons are clicked
+    workModeButton.addEventListener('click', () => manualSwitchMode('work'));
+    shortBreakModeButton.addEventListener('click', () => manualSwitchMode('shortBreak'));
+    longBreakModeButton.addEventListener('click', () => manualSwitchMode('longBreak'));
 
-  // Save customized timer and settings
-  const saveBtn = document.getElementById('save-btn');
-  const workDurationInput = document.getElementById('work-duration');
-  const shortBreakDurationInput = document.getElementById('short-break-duration');
-  const longBreakDurationInput = document.getElementById('long-break-duration');
-  const darkModeToggle = document.getElementById('dark-mode-toggle');
-  const notificationsToggle = document.getElementById('notifications-toggle');
+    // Request Notification Permission on page load
+    if (Notification.permission === 'default') {
+        Notification.requestPermission();
+    }
 
-  
+    // Save customized timer and settings
+    const saveBtn = document.getElementById('save-btn');
+    const workDurationInput = document.getElementById('work-duration');
+    const shortBreakDurationInput = document.getElementById('short-break-duration');
+    const longBreakDurationInput = document.getElementById('long-break-duration');
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const notificationsToggle = document.getElementById('notifications-toggle');
+
+    // Save button functionality in the customization modal
+    saveBtn.addEventListener('click', () => {
+        // Save durations
+        timeSettings.workTime = workDurationInput.value * 60;
+        timeSettings.shortBreakTime = shortBreakDurationInput.value * 60;
+        timeSettings.longBreakTime = longBreakDurationInput.value * 60;
+
+        // Store Dark Mode and Notifications preferences based on whether the toggle has the 'active' class
+        const darkModeEnabled = darkModeToggle.classList.contains('active');
+        const notificationsEnabled = notificationsToggle.classList.contains('active');
+
+        // Apply dark mode
+        if (darkModeEnabled) {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'disabled');
+        }
+
+        // Save notifications preference
+        localStorage.setItem('notificationsEnabled', notificationsEnabled ? 'enabled' : 'disabled');
+
+        // Notify the user
+        notifyUser('Settings saved successfully!');
+
+        // Optionally close the modal after saving settings
+        closeModal('customization-modal');
+    });
+
+
 
 });
