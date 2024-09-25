@@ -308,4 +308,59 @@ color: #32CD32;
   align-items: center;
 }
 
+.modal.show {
+  display: flex; /* Show modal when class is added */
+  opacity: 1;
+}
+
+.modal-content {
+  background-color: #4682B4;
+  color: #FAFAFA;
+  padding: 30px;
+  font-size: 1rem;
+  border: 1px solid #888;
+  border-radius: 10px;
+  max-width: 300px;
+  max-height: 80vh;
+  animation: fadeIn 0.5s;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.modal-content label {
+  margin-bottom: 8px; /* Space below labels */
+}
+
+.modal-content input,
+.modal-content textarea,
+.modal-content button {
+  width: 90%;
+}
+
+.modal-content button {
+  background-color: #FFC857;
+  color: #353935;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  max-width: 150px;
+  text-align: center;
+}
+
+.modal-content button:hover {
+  background-color: #FFD700;
+  transform: scale(1.07);
+}
+
+.modal-content a {
+  color: #FFC857;
+  text-decoration: none;
+}
+
 
