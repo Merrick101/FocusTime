@@ -118,6 +118,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const shortBreakModeButton = document.getElementById('shortBreak-mode');
     const longBreakModeButton = document.getElementById('longBreak-mode');
 
-
+    // Function to handle notifications
+    function notifyUser(message) {
+        if (Notification.permission === 'granted') {
+            new Notification(message);
+        } else if (Notification.permission === 'default') {
+            Notification.requestPermission().then(permission => {
+                if (permission === 'granted') {
+                    new Notification(message);
+                }
+            });
+        } else {
+            alert(message); // Fallback if notifications aren't available
+        }
+    }
 
 });
