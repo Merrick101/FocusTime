@@ -583,3 +583,42 @@ body.dark-mode .modal-content button:hover {
 body.dark-mode .modal-content a {
   color: #1abc9c;
 }
+
+/* Media queries */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 0;
+  }
+
+  #content.shift {
+    margin-left: 250px;
+  }
+
+  .top-bar {
+    padding: 10px;
+  }
+
+  .modal-content {
+    width: 90%; /* Adjust modal size */
+  }
+}
+
+@media (min-width: 500px) {
+  .top-controls,
+  .bottom-controls {
+    gap: 35px;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-content {
+    max-width: 400px; /* Increase width slightly for larger screens */
+  }
+}
+
+/* Media query for larger screens (laptops/desktops) */
+@media (min-width: 1024px) {
+  .intro {
+    padding-top: 45px;
+  }
+}
