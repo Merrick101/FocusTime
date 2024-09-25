@@ -257,4 +257,14 @@ document.addEventListener('DOMContentLoaded', function () {
     Notification.requestPermission();
   }
 
+  // Save customized timer and settings
+  const saveBtn = document.getElementById('save-btn');
+  const workDurationInput = document.getElementById('work-duration');
+  const shortBreakDurationInput = document.getElementById('short-break-duration');
+  const longBreakDurationInput = document.getElementById('long-break-duration');
+  const darkModeToggle = document.getElementById('dark-mode-toggle');
+  const notificationsToggle = document.getElementById('notifications-toggle');
+
+  
+
 });
