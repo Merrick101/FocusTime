@@ -295,6 +295,21 @@ document.addEventListener('DOMContentLoaded', function () {
         closeModal('customization-modal');
     });
 
+    // Toggle Dark Mode
+  darkModeToggle.addEventListener('click', () => {
+    darkModeToggle.classList.toggle('active');
+    const isDarkMode = darkModeToggle.classList.contains('active');
+    document.body.classList.toggle('dark-mode', isDarkMode);
+    localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+  });
 
+  // Toggle Notifications
+  notificationsToggle.addEventListener('click', () => {
+    notificationsToggle.classList.toggle('active');
+    const notificationsEnabled = notificationsToggle.classList.contains('active');
+    localStorage.setItem('notificationsEnabled', notificationsEnabled ? 'enabled' : 'disabled');
+  });
+
+  
 
 });
