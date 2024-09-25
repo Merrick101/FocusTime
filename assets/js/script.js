@@ -206,6 +206,18 @@ document.addEventListener('DOMContentLoaded', function () {
         startPauseButton.innerHTML = '<i class="fa-solid fa-play"></i> Start';
     }
 
+    // **Manual Mode Switching** without triggering notifications
+    function manualSwitchMode(mode) {
+        timeSettings.currentMode = mode;
+        timeSettings.timeLeft = mode === 'work'
+            ? timeSettings.workTime
+            : mode === 'shortBreak'
+                ? timeSettings.shortBreakTime
+                : timeSettings.longBreakTime;
 
+        resetTimer(); // Reset the timer for the new mode
+        document.querySelectorAll('.mode-btn').forEach(button => button.classList.remove('active'));
+        document.getElementById(`${timeSettings.currentMode}-mode`).classList.add('active');
+    }
 
 });
