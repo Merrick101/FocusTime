@@ -133,4 +133,31 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // Update Timer Display
+    function updateTimerDisplay(time) {
+        const minutes = Math.floor(time / 60);
+        const seconds = time % 60;
+        timeDisplay.textContent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+        timeDisplay.style.color = time > 900 ? '#4682B4' : time > 300 ? '#32CD32' : '#FF6347';
+    }
+
+    // Update Progress Bar
+    function updateProgress(time) {
+        const totalTime = timeSettings.currentMode === 'work'
+            ? timeSettings.workTime
+            : timeSettings.currentMode === 'shortBreak'
+                ? timeSettings.shortBreakTime
+                : timeSettings.longBreakTime;
+
+        const progressPercent = (time / totalTime) * 100;
+        progressBarFill.style.width = `${progressPercent}%`;
+        progressBarFill.style.backgroundColor = timeSettings.currentMode === 'work'
+            ? '#4682B4'
+            : timeSettings.currentMode === 'shortBreak'
+                ? '#FF6347'
+                : '#32CD32';
+    }
+
+
+
 });
