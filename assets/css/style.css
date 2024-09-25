@@ -429,3 +429,43 @@ input {
   transform: scale(1.05);
 }
 
+.auth-form p {
+  margin-top: 10px;
+  color: #fafafa;
+}
+
+.auth-form a {
+  color: #ffc857;
+  text-decoration: none;
+}
+.auth-form a:hover {
+  color: #ffd700;
+  text-decoration: underline;
+}
+
+#customization-modal .modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+#customization-modal label {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #fafafa; /* Match the modal text color */
+}
+
+#customization-modal input {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px; /* Space between input fields */
+}
+
+#customization-modal .toggle-switch {
+  margin-bottom: 15px; /* Add space between toggle switches */
+}
+
+#customization-modal button {
+  margin-top: 15px; /* Add space above the save button */
+}
