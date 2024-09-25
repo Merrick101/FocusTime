@@ -265,4 +265,34 @@ color: #32CD32;
 /* Five minutes left */
 #time.nearing-end { color: #FF6347; }
 
+/* Toggle Switch Styling */
+.toggle-switch {
+  width: 50px;
+  height: 25px;
+  background-color: #ccc;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-switch::before {
+  content: '';
+  width: 23px;
+  height: 23px;
+  background-color: #FAFAFA;
+  border-radius: 50%;
+  position: absolute;
+  top: -7px;
+  left: 1px;
+  transition: 0.3s;
+}
+
+.toggle-switch.active {
+  background-color: #4682B4;
+}
+
+.toggle-switch.active::before {
+  left: 24px;
+}
+
 
