@@ -1,0 +1,31 @@
+/* General styling */
+:root {
+  --bg-color: #FAFAFA;
+  --text-color: #353935;
+  --sidebar-bg: #4682B4;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  box-sizing: border-box;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+  
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
