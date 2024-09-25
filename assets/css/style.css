@@ -245,4 +245,24 @@ h6 {
   transition: width 0.3s linear;
 }
 
+/* Digital Clock inside timer area */
+@font-face {
+  font-family: 'DS-DIGI';
+  src: url('/assets/fonts/DS-DIGI.TTF') format('truetype');
+}
+
+#time {
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  font-family: 'DS-DIGI', sans-serif;
+  color: #4682B4;
+  text-align: center;
+}
+
+#time.fifteen-minutes-left {
+color: #32CD32;
+}
+
+/* Five minutes left */
+#time.nearing-end { color: #FF6347; }
+
 
