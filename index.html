@@ -139,6 +139,51 @@
         </div>
     </div>
 
+    <!-- Profile Modal -->
+    <div id="profile-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="sign-in-form" class="auth-form">
+                <h2>Sign In</h2>
+                <form action="https://formdump.codeinstitute.net/" method="POST">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <button type="submit">Sign In</button>
+                    <p>Don't have an account? <a href="#" id="switch-to-signup">Sign Up</a></p>
+                </form>
+            </div>
+
+            <div id="sign-up-form" class="auth-form hidden">
+                <h2>Sign Up</h2>
+                <form action="https://formdump.codeinstitute.net/" method="POST">
+                    <label for="sign-up-email">Email:</label>
+                    <input type="email" id="sign-up-email" name="email" required>
+                    <label for="sign-up-password">Password:</label>
+                    <input type="password" id="sign-up-password" name="password" required>
+                    <button type="submit">Sign Up</button>
+                    <p>Already have an account? <a href="#" id="switch-to-signin">Sign In</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Contact Us</h2>
+            <form id="feedback-form" action="https://formdump.codeinstitute.net/" method="POST">
+                <label for="contact-email">Email:</label>
+                <input type="email" id="contact-email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
     <!-- JavaScript -->
     <script src="assets/js/script.js"></script>
 </body>
