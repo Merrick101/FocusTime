@@ -31,11 +31,11 @@
 
 <body>
     <!-- Sidebar -->
-    <nav id="sidebar" class="sidebar">
-        <a href="#" class="close-btn">&times;</a>
-        <a href="#" data-modal="about-modal"><i class="fa-solid fa-circle-info"></i> About</a>
-        <a href="#" data-modal="profile-modal"><i class="fa-solid fa-user"></i> Profile</a>
-        <a href="#" data-modal="contact-modal"><i class="fa-solid fa-message"></i> Contact</a>
+    <nav id="sidebar" class="sidebar" aria-label="Main Navigation">
+        <a href="#" class="close-btn" aria-label="Close Sidebar">&times;</a>
+        <a href="#" data-modal="about-modal" aria-label="About Information"><i class="fa-solid fa-circle-info"></i> About</a>
+        <a href="#" data-modal="profile-modal" aria-label="Sign In & Sign Up Forms"><i class="fa-solid fa-user"></i> Profile</a>
+        <a href="#" data-modal="contact-modal" aria-label="Contact Form"><i class="fa-solid fa-message"></i> Contact</a>
         <footer class="sidebar-footer">
             <p>&copy; FocusTime 2024</p>
             <p>Visit Us On Social Media</p>
@@ -55,7 +55,7 @@
 
     <!-- Top Bar with Menu Button and Heading -->
     <header class="top-bar">
-        <button class="open-btn"><i class="fa-solid fa-bars"></i></button>
+        <button class="open-btn" aria-label="Open Navigation Menu"><i class="fa-solid fa-bars"></i></button>
         <h1>F<i class="fa-solid fa-clock"></i>cusTime</h1>
     </header>
 
@@ -69,9 +69,9 @@
         <div class="box">
             <!-- Timer Mode Switch Option (top row) -->
             <div class="top-controls">
-                <button id="work-mode" class="mode-btn">Work</button>
-                <button id="shortBreak-mode" class="mode-btn">Short Break</button>
-                <button id="longBreak-mode" class="mode-btn">Long Break</button>
+                <button id="work-mode" class="mode-btn" aria-label="Work Timer Mode">Work</button>
+                <button id="shortBreak-mode" class="mode-btn" aria-label="Short Break Timer Mode">Short Break</button>
+                <button id="longBreak-mode" class="mode-btn" aria-label="Long Break Timer Mode">Long Break</button>
             </div>
 
             <!-- Progress Bar and Timer Display -->
@@ -84,9 +84,9 @@
 
             <!-- Control Buttons (bottom row) -->
             <div class="bottom-controls">
-                <button id="start-pause"><i class="fa-solid fa-play"></i> Start</button>
-                <button id="reset"><i class="fa-solid fa-undo"></i> Reset</button>
-                <button id="customize-timer" data-modal="customization-modal"><i class="fa-solid fa-gear"></i>
+                <button id="start-pause" aria-label="Start & Pause Timer"><i class="fa-solid fa-play"></i> Start</button>
+                <button id="reset" aria-label="Reset Timer"><i class="fa-solid fa-undo"></i> Reset</button>
+                <button id="customize-timer" data-modal="customization-modal" aria-label="Customize Timer"><i class="fa-solid fa-gear"></i>
                     Settings</button>
             </div>
         </div>
@@ -112,14 +112,14 @@
             <label for="notifications-toggle">Notifications:</label>
             <div id="notifications-toggle" class="toggle-switch"></div>
 
-            <button id="save-btn">Save</button>
+            <button id="save-btn" aria-label="Save Settings">Save</button>
         </div>
     </div>
 
     <!-- About Modal -->
     <div id="about-modal" class="modal">
         <div class="modal-content">
-            <span class="close-btn">&times;</span>
+            <span class="close-btn" aria-label="Close Window">&times;</span>
             <h3>About FocusTime</h3>
             <p>FocusTime is a productivity tool based on the Pomodoro technique. It helps you manage your time by
                 working in focused intervals, followed by short breaks, to maintain high productivity levels without
@@ -149,7 +149,7 @@
     <!-- Profile Modal -->
     <div id="profile-modal" class="modal">
         <div class="modal-content">
-            <span class="close-btn">&times;</span>
+            <span class="close-btn" aria-label="Close Window">&times;</span>
             <div id="sign-in-form" class="auth-form">
                 <h2>Sign In</h2>
                 <form action="https://formdump.codeinstitute.net/" method="POST">
