@@ -109,4 +109,15 @@ document.addEventListener('DOMContentLoaded', function () {
     let isRunning = false;  // Tracks whether the timer is running
     let interval;           // Stores the reference to the interval
 
+    // Get references to HTML elements
+    const timeDisplay = document.getElementById('time');
+    const progressBarFill = document.getElementById('progress-bar-fill');
+    const startPauseButton = document.getElementById('start-pause');
+    const resetButton = document.getElementById('reset');
+    const workModeButton = document.getElementById('work-mode');
+    const shortBreakModeButton = document.getElementById('shortBreak-mode');
+    const longBreakModeButton = document.getElementById('longBreak-mode');
+
+
+
 });
