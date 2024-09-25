@@ -479,7 +479,7 @@ input {
 #contact-modal label {
   margin-bottom: 8px;
   font-size: 1rem;
-  color: #FAFAFA;
+  color: #fafafa;
 }
 
 #contact-modal input,
@@ -497,4 +497,89 @@ input {
 
 #contact-modal button {
   margin-top: 15px;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --sidebar-bg: #333;
+}
+
+body.dark-mode .top-bar {
+  background-color: #121212;
+}
+
+body.dark-mode .sidebar a:hover {
+  background-color: #1abc9c; /* Teal color for dark mode */
+}
+
+body.dark-mode .sidebar-footer .social-icons i:hover {
+  color: #1abc9c; /* Teal color for social icons */
+}
+
+body.dark-mode .open-btn {
+  color: #f0f0f0;
+}
+
+body.dark-mode .button:hover {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+body.dark-mode .progress-bar-fill {
+  background-color: #00aaff; /* Darker version for progress bar */
+}
+
+body.dark-mode .box {
+  background-color: #333;
+  border-color: #555;
+  color: #f0f0f0;
+}
+
+body.dark-mode .box button {
+  background-color: #1abc9c; /* Teal button for dark mode */
+  color: white; /* Light text */
+}
+
+body.dark-mode .button,
+.toggle-switch {
+  background-color: #555;
+  color: #fff;
+}
+
+body.dark-mode .progress-bar-fill {
+  background-color: #00aaff; /* Blue color for progress bar */
+}
+
+body.dark-mode .modal-content {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+body.dark-mode .modal-content {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+body.dark-mode .close-btn:hover {
+  color: #1abc9c;
+}
+
+body.dark-mode .auth-form button,
+body.dark-mode #save-btn,
+body.dark-mode .modal-content button {
+  background-color: #1abc9c; /* Teal button for dark mode */
+  color: #ffffff; /* Light text */
+}
+
+body.dark-mode .auth-form button:hover,
+body.dark-mode #save-btn:hover,
+body.dark-mode .modal-content button:hover {
+  background-color: #16a085; /* Darker teal on hover */
+}
+
+.body.dark-mode .auth-form a,
+body.dark-mode .modal-content a {
+  color: #1abc9c;
 }
