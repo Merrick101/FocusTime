@@ -193,3 +193,39 @@ h6 {
   gap: 15px;
   margin: 20px auto;
 }
+
+.bottom-controls button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  margin-top: 5px;
+  gap: 5px;
+}
+
+.bottom-controls button i {
+  font-size: 1.2em;
+}
+
+/* Specific styles for mode buttons */
+.mode-btn {
+  flex: 1;
+}
+
+/* Active state for each mode */
+#work-mode.active {
+  background-color: #4682B4; /* Blue for Work mode */
+  color: white; /* Text color contrast */
+}
+
+#shortBreak-mode.active {
+  background-color: #FF6347; /* Red for Short Break mode */
+  color: white;
+}
+
+#longBreak-mode.active {
+  background-color: #32CD32; /* Green for Long Break mode */
+  color: white;
+}
+
+
