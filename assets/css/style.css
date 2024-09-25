@@ -164,3 +164,32 @@ h6 {
   align-items: center;
   justify-content: center;
 }
+
+/* General button styles within the timer area */
+.box button {
+  background-color: #FFC857;
+  color: #353935;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: clamp(14px, 2vw, 18px);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  max-width: 150px;
+  text-align: center;
+}
+
+/* Button hover effect */
+.box button:hover {
+  background-color: #FFD700;
+  transform: scale(1.07);
+}
+
+/* Top and bottom controls layout */
+.top-controls, .bottom-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 20px auto;
+}
