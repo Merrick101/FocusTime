@@ -1,131 +1,139 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# FocusTime
 
-Welcome Merrick Minogue,
+FocusTime is a web application designed to help users stay productive by leveraging the Pomodoro technique, a time management method that alternates between focused work sessions and short breaks. The app is designed for individuals who want to improve their focus, manage their time efficiently, and prevent burnout. With customizable timers, notifications, and a dark mode feature, FocusTime is a flexible tool for any working environment.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Features
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+### Existing Features
 
-## Gitpod Reminders
+- **Wireframes**
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+  - The following wireframes represent the initial design of FocusTime. These include views for both the home page and the modals.
 
-`python3 -m http.server`
+  - ![Home Page Wireframe](./assets/images/wireframes/home_page.png)
 
-A blue button should appear to click: _Make Public_,
+  - ![Customization Modal Wireframe](./assets/images/wireframes/customization_modal.png)
 
-Another blue button should appear to click: _Open Browser_.
+  - ![About Modal Wireframe](./assets/images/wireframes/about_modal.png)
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+  - ![Profile Modal Wireframe 1](./assets/images/wireframes/profile_modal_sign_in.png)
 
-A blue button should appear to click: _Make Public_,
+  - ![Profile Modal Wireframe 2](./assets/images/wireframes/profile_modal_sign_up.png)
 
-Another blue button should appear to click: _Open Browser_.
+  - ![Contact Modal Wireframe](./assets/images/wireframes/contact_modal.png)
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- **Responsive Sidebar Menu**
 
-To log into the Heroku toolbelt CLI:
+  - The app includes a fully responsive sidebar navigation menu that is accessible from all screen sizes. Users can open the sidebar by clicking the menu icon (hamburger icon) located in the top bar.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+    ![Top Bar](./assets/images/media/focus_time_header.PNG)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+  - The sidebar provides links to key sections such as "About," "Profile," and "Contact," which are displayed as modals for a seamless user experience.
 
-### Connecting your Mongo database
+    ![Sidebar Menu](./assets/images/media/focus_time_sidebar.PNG)
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+- **Customizable Timer**
 
-------
+  - The core functionality of FocusTime is a customizable timer. Users can select from Work Mode, Short Break, and Long Break modes, or customize the timer duration. The customizable timer helps users adjust their work or break duration according to their preferences, offering more flexibility compared to fixed Pomodoro intervals.
 
-## Release History
+    ![Timer](./assets/images/media/focus_time_timer.PNG)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- **Progress Bar**
 
-**June 18, 2024,** Add Mongo back into template
+  - A visual progress bar indicates how much time is left in the current session.
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+    ![Progress Bar](./assets/images/media/focus_time_progress_bar.PNG)
 
-**May 28 2024:** Fix Mongo and Links installs
+- **Dark Mode**
 
-**April 26 2024:** Update node version to 16
+  - Dark Mode allows users to reduce eye strain when working in low-light environments, making it more comfortable for longer work sessions.
 
-**September 20 2023:** Update Python version to 3.9.17.
+    ![Dark Mode](./assets/images/media/focus_time_dark_mode.PNG)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- **Notifications**
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+  - Users can enable or disable desktop notifications to alert them when the session ends, ensuring they don’t miss a break or the start of a new session.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+  ![Notifications](./assets/images/media/focus_time_notifications.PNG)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### Features Left to Implement
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- **Task Management System**
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+  - Users will be able to create, manage, and track tasks directly within the app.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- **Session Tracking**
+  - A session history will allow users to see how many Pomodoro cycles they’ve completed over a given period.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## Testing
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### HTML Validation
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- **Initial Test**
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+When passing the HTML code through the W3C HTML Validator, the following warnings and errors were detected:
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+- Warning: Misuse of aria-label in the close buttons of modals.
+- Error: The for attribute was applied to elements that were not associated with a form control.
+- Resolution: The aria-label attributes were removed from elements where they were not needed, and the for attributes were removed from labels associated with toggle switches, as they were not connected to a valid form input.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+- **Final Test**
+  - The HTML was validated using the [W3C Validator](https://validator.w3.org/), with no errors or warnings.
+    ![HTML Validation Screenshot](./assets/images/testing/html/html_second_test.PNG)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### CSS Validation
 
-------
+- The CSS was validated using the [W3C Jigsaw Validator](https://jigsaw.w3.org/css-validator/), passing without issues.
+  ![CSS Validation Screenshot](./assets/images/testing/css/css_first_test.PNG)
 
-## FAQ about the uptime script
+### JavaScript Validation
 
-**Why have you added this script?**
+- **Initial Test**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+Using JSHint, the following warnings were detected:
 
-**How will this affect me?**
+- Warning: "Do not use new for side effects." This referred to using the new Notification() syntax.
+- Resolution: After refactoring the code for improved readability, I chose to retain the new Notification() usage for creating notifications, as it is necessary for the browser notification functionality.
+- Warning: Use of ES6 features like const and arrow functions (=>) flagged by JSHint.
+- Resolution: To resolve these warnings, I added the comment /_ jshint esversion: 6 _/ at the top of my JavaScript files to explicitly tell JSHint that ES6 features are being used intentionally. This resolved the ES6-related warnings.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+- **Final Test**
+  - The JavaScript code was validated using [JSHint](https://jshint.com/), and while it produced warnings about the `Notification` API, the application functioned as expected.
+    ![JavaScript Validation Screenshot](./assets/images/testing/js/js_third_test_01.PNG)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+### Browser Compatibility
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+- The application was tested across various devices including mobile phones, tablets, and desktops, and performed consistently in Chrome, Firefox, and Safari.
 
-**So….?**
+### Known Bugs
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+- **Notifications API Warning**: The Notification API produces warnings about its usage but doesn't affect the functionality.
 
-**Can I opt out?**
+## Deployment
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+The project was deployed to GitHub Pages. The following steps were taken to deploy the project:
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+1. Navigate to the GitHub repository.
+2. Click on the **Settings** tab.
+3. Scroll down to the **GitHub Pages** section.
+4. Under **Source**, select the **main** branch.
+5. Click **Save** and wait for the page to refresh.
 
-**Anything more?**
+The live site can be accessed here: [FocusTime](https://merrick101.github.io/focustime/)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+## Credits
 
----
+### Content
 
-Happy coding!
+- The Pomodoro Technique definition was adapted from [Wikipedia](https://en.wikipedia.org/wiki/Pomodoro_Technique).
+- JavaScript progress bar logic was referenced from [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations).
+
+### Media
+
+- Icons used in the app are from [Font Awesome](https://fontawesome.com/).
+- Favicons used are from [Icons8](https://icons8.com/).
+- Fonts are provided by [Google Fonts](https://fonts.google.com/) & [DaFont](https://www.dafont.com/).
+
+### Acknowledgements
+
+- Thanks to Code Institute for the project template and assessment guidelines.
