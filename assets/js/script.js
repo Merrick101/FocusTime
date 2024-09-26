@@ -122,11 +122,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to handle notifications
     function notifyUser(message) {
         if (Notification.permission === 'granted') {
-            new Notification(message);
+            const notification = new Notification(message); // Store the notification, even if not used
         } else if (Notification.permission === 'default') {
             Notification.requestPermission().then(permission => {
                 if (permission === 'granted') {
-                    new Notification(message);
+                    const notification = new Notification(message);
                 }
             });
         } else {
@@ -144,19 +144,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Update Progress Bar
     function updateProgress(time) {
-        const totalTime = timeSettings.currentMode === 'work'
-            ? timeSettings.workTime
-            : timeSettings.currentMode === 'shortBreak'
-                ? timeSettings.shortBreakTime
-                : timeSettings.longBreakTime;
+        let totalTime;
+        let progressBarColor;
 
+        // Determine the total time based on the current mode
+        if (timeSettings.currentMode === 'work') {
+            totalTime = timeSettings.workTime;
+            progressBarColor = '#4682B4'; // Blue for Work mode
+        } else if (timeSettings.currentMode === 'shortBreak') {
+            totalTime = timeSettings.shortBreakTime;
+            progressBarColor = '#FF6347'; // Red for Short Break mode
+        } else {
+            totalTime = timeSettings.longBreakTime;
+            progressBarColor = '#32CD32'; // Green for Long Break mode
+        }
+
+        // Calculate progress percentage
         const progressPercent = (time / totalTime) * 100;
+
+        // Update progress bar
         progressBarFill.style.width = `${progressPercent}%`;
-        progressBarFill.style.backgroundColor = timeSettings.currentMode === 'work'
-            ? '#4682B4'
-            : timeSettings.currentMode === 'shortBreak'
-                ? '#FF6347'
-                : '#32CD32';
+        progressBarFill.style.backgroundColor = progressBarColor;
     }
 
     // Start or Pause the timer
@@ -196,27 +204,42 @@ document.addEventListener('DOMContentLoaded', function () {
     function resetTimer() {
         clearInterval(interval);
         isRunning = false;
-        timeSettings.timeLeft = timeSettings.currentMode === 'work'
-            ? timeSettings.workTime
-            : timeSettings.currentMode === 'shortBreak'
-                ? timeSettings.shortBreakTime
-                : timeSettings.longBreakTime;
 
+        // Determine the correct time left based on the current mode
+        if (timeSettings.currentMode === 'work') {
+            timeSettings.timeLeft = timeSettings.workTime;
+        } else if (timeSettings.currentMode === 'shortBreak') {
+            timeSettings.timeLeft = timeSettings.shortBreakTime;
+        } else {
+            timeSettings.timeLeft = timeSettings.longBreakTime;
+        }
+
+        // Update display and progress
         updateTimerDisplay(timeSettings.timeLeft);
         updateProgress(timeSettings.timeLeft);
+
+        // Reset the start/pause button
         startPauseButton.innerHTML = '<i class="fa-solid fa-play"></i> Start';
     }
 
     // **Manual Mode Switching** without triggering notifications
     function manualSwitchMode(mode) {
+        // Switch the mode
         timeSettings.currentMode = mode;
-        timeSettings.timeLeft = mode === 'work'
-            ? timeSettings.workTime
-            : mode === 'shortBreak'
-                ? timeSettings.shortBreakTime
-                : timeSettings.longBreakTime;
 
-        resetTimer(); // Reset the timer for the new mode
+        // Determine the correct time left based on the mode
+        if (mode === 'work') {
+            timeSettings.timeLeft = timeSettings.workTime;
+        } else if (mode === 'shortBreak') {
+            timeSettings.timeLeft = timeSettings.shortBreakTime;
+        } else {
+            timeSettings.timeLeft = timeSettings.longBreakTime;
+        }
+
+        // Reset the timer for the new mode
+        resetTimer();
+
+        // Update active button styling
         document.querySelectorAll('.mode-btn').forEach(button => button.classList.remove('active'));
         document.getElementById(`${timeSettings.currentMode}-mode`).classList.add('active');
     }
@@ -297,35 +320,35 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Toggle Dark Mode
-  darkModeToggle.addEventListener('click', () => {
-    darkModeToggle.classList.toggle('active');
-    const isDarkMode = darkModeToggle.classList.contains('active');
-    document.body.classList.toggle('dark-mode', isDarkMode);
-    localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
-  });
+    darkModeToggle.addEventListener('click', () => {
+        darkModeToggle.classList.toggle('active');
+        const isDarkMode = darkModeToggle.classList.contains('active');
+        document.body.classList.toggle('dark-mode', isDarkMode);
+        localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+    });
 
-  // Toggle Notifications
-  notificationsToggle.addEventListener('click', () => {
-    notificationsToggle.classList.toggle('active');
-    const notificationsEnabled = notificationsToggle.classList.contains('active');
-    localStorage.setItem('notificationsEnabled', notificationsEnabled ? 'enabled' : 'disabled');
-  });
+    // Toggle Notifications
+    notificationsToggle.addEventListener('click', () => {
+        notificationsToggle.classList.toggle('active');
+        const notificationsEnabled = notificationsToggle.classList.contains('active');
+        localStorage.setItem('notificationsEnabled', notificationsEnabled ? 'enabled' : 'disabled');
+    });
 
-   // Initialize Toggles on Page Load (Restore from LocalStorage)
-   const darkModeEnabled = localStorage.getItem('darkMode') === 'enabled';
-   const notificationsEnabled = localStorage.getItem('notificationsEnabled') === 'enabled';
- 
-   darkModeToggle.classList.toggle('active', darkModeEnabled);
-   document.body.classList.toggle('dark-mode', darkModeEnabled);
-   notificationsToggle.classList.toggle('active', notificationsEnabled);
- 
-   // Add event listener for feedback form submission
-   const feedbackForm = document.getElementById('feedback-form');
-   if (feedbackForm) {
-     feedbackForm.addEventListener('submit', function (event) {
-       event.preventDefault();
-       alert('Thank you for your feedback!');
-       closeModal('contact-modal');
-     });
-   }
+    // Initialize Toggles on Page Load (Restore from LocalStorage)
+    const darkModeEnabled = localStorage.getItem('darkMode') === 'enabled';
+    const notificationsEnabled = localStorage.getItem('notificationsEnabled') === 'enabled';
+
+    darkModeToggle.classList.toggle('active', darkModeEnabled);
+    document.body.classList.toggle('dark-mode', darkModeEnabled);
+    notificationsToggle.classList.toggle('active', notificationsEnabled);
+
+    // Add event listener for feedback form submission
+    const feedbackForm = document.getElementById('feedback-form');
+    if (feedbackForm) {
+        feedbackForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Thank you for your feedback!');
+            closeModal('contact-modal');
+        });
+    }
 });
