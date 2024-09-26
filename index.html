@@ -32,7 +32,7 @@
 <body>
     <!-- Sidebar -->
     <nav id="sidebar" class="sidebar" aria-label="Main Navigation">
-        <a href="#" class="close-btn" aria-label="Close Sidebar">&times;</a>
+        <a href="#" class="close-btn" aria-label="Close Navigation">&times;</a>
         <a href="#" data-modal="about-modal" aria-label="About Information"><i class="fa-solid fa-circle-info"></i> About</a>
         <a href="#" data-modal="profile-modal" aria-label="Sign In & Sign Up Forms"><i class="fa-solid fa-user"></i> Profile</a>
         <a href="#" data-modal="contact-modal" aria-label="Contact Form"><i class="fa-solid fa-message"></i> Contact</a>
@@ -55,7 +55,7 @@
 
     <!-- Top Bar with Menu Button and Heading -->
     <header class="top-bar">
-        <button class="open-btn" aria-label="Open Navigation Menu"><i class="fa-solid fa-bars"></i></button>
+        <button class="open-btn" aria-label="Open Navigation"><i class="fa-solid fa-bars"></i></button>
         <h1>F<i class="fa-solid fa-clock"></i>cusTime</h1>
     </header>
 
@@ -75,7 +75,7 @@
             </div>
 
             <!-- Progress Bar and Timer Display -->
-            <div class="progress-bar">
+            <div class="progress-bar" role="progressbar" aria-label="Timer Progress">
                 <div class="progress-bar-fill" id="progress-bar-fill"></div>
             </div>
             <div class="content">
@@ -95,7 +95,7 @@
     <!-- Modal for Customization -->
     <div id="customization-modal" class="modal">
         <div class="modal-content">
-            <span class="close-btn">&times;</span>
+            <span class="close-btn" aria-label="Close Window">&times;</span>
             <h2>Customize Your Timer</h2>
             <!-- Timer duration options -->
             <label for="work-duration">Work Duration (minutes): </label>
@@ -107,10 +107,10 @@
 
             <!-- Dark Mode and Notifications Toggle -->
             <label for="dark-mode-toggle">Dark Mode:</label>
-            <div id="dark-mode-toggle" class="toggle-switch"></div>
+            <div id="dark-mode-toggle" class="toggle-switch" role="switch" aria-label="Enable Dark Mode"></div>
 
             <label for="notifications-toggle">Notifications:</label>
-            <div id="notifications-toggle" class="toggle-switch"></div>
+            <div id="notifications-toggle" class="toggle-switch" role="switch" aria-label="Enable Notifications"></div>
 
             <button id="save-btn" aria-label="Save Settings">Save</button>
         </div>
@@ -179,7 +179,7 @@
     <!-- Contact Modal -->
     <div id="contact-modal" class="modal">
         <div class="modal-content">
-            <span class="close-btn">&times;</span>
+            <span class="close-btn" aria-label="Close Window">&times;</span>
             <h2>Contact Us</h2>
             <form id="feedback-form" action="https://formdump.codeinstitute.net/" method="POST">
                 <label for="contact-email">Email:</label>
