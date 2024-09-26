@@ -292,7 +292,6 @@ h6 {
   background-color: #fafafa;
   border-radius: 50%;
   position: absolute;
-  top: -7px;
   left: 1px;
   transition: 0.3s;
 }
@@ -621,6 +620,11 @@ body.dark-mode .modal-content a {
   .modal-content {
     max-width: 400px; /* Increase width slightly for larger screens */
   }
+
+  /* Style for larger screens */
+  .toggle-switch {
+    background-color: #555;
+}
 }
 
 /* Media query for larger screens (laptops/desktops) */

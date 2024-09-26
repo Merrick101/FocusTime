@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 document.addEventListener('DOMContentLoaded', function () {
     // Add event listeners for buttons instead of using "onclick" in HTML
     document.querySelector('.open-btn').addEventListener('click', toggleSidebar);
