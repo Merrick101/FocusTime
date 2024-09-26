@@ -119,7 +119,7 @@ The project was deployed to GitHub Pages. The following steps were taken to depl
 4. Under **Source**, select the **main** branch.
 5. Click **Save** and wait for the page to refresh.
 
-The live site can be accessed here: [FocusTime](https://merrick101.github.io/focustime/)
+The live site can be accessed here: [FocusTime](https://merrick101.github.io/FocusTime/)
 
 ## Credits
 
@@ -132,7 +132,7 @@ The live site can be accessed here: [FocusTime](https://merrick101.github.io/foc
 
 - Icons used in the app are from [Font Awesome](https://fontawesome.com/).
 - Favicons used are from [Icons8](https://icons8.com/).
-- Fonts are provided by [Google Fonts](https://fonts.google.com/) & [DaFont](https://www.dafont.com/).
+- Fonts are provided by [Google Fonts](https://fonts.google.com/).
 
 ### Acknowledgements
 

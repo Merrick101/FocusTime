@@ -253,15 +253,9 @@ h6 {
   transition: width 0.3s linear;
 }
 
-/* Digital Clock inside timer area */
-@font-face {
-  font-family: "DS-DIGI";
-  src: url("/assets/fonts/DS-DIGI.TTF") format("truetype");
-}
-
 #time {
   font-size: clamp(2.5rem, 10vw, 5rem);
-  font-family: "DS-DIGI", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #4682b4;
   text-align: center;
 }
